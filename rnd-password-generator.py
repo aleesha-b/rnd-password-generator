@@ -28,7 +28,6 @@ while True:
     print("Your password cannot consist of nothing, let's try that again...")
 
 for i in range(password_length):
-    random_integer = random.randint(48, 122)
     random_integer = random.randint(*random.choice(rnd_range))
     password += chr(random_integer)
 
