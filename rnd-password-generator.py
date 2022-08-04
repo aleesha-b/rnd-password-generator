@@ -1,4 +1,3 @@
-from ast import While
 import random
 
 password = ""
@@ -33,3 +32,11 @@ for i in range(password_length):
     password += chr(random_integer)
 
 print(password)
+
+import re
+#Code written by Mukkamala Vineela (https://www.codespeedy.com/check-the-password-strength-in-python/)
+#Tests for password strength
+if(bool(re.match('((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*""''()+,-./]).{1,50})', password))==True):
+    print("The password is strong")
+elif(bool(re.match('((\d*)([a-z]*)([A-Z]*)([!@#$%^&*""''()+,-./]*).{1,50})', password))==True):
+    print("The password is weak")
